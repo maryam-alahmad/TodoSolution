@@ -30,9 +30,11 @@ namespace NTierTodoApp.DataAccess
         // TODO: تنفيذ دالة حذف المهمة
         public void Delete(int id)
         {
-            // TODO: ابحث عن المهمة باستخدام id
-
-            // TODO: إذا كانت المهمة موجودة، قم بإزالتها من القائمة
+            var task = tasks.FirstOrDefault(t => t.Id == id); // TODO: ابحث عن المهمة باستخدام id 
+            if (task != null) // TODO: إذا كانت المهمة موجودة، قم بإزالتها من القائمة
+            {
+                tasks.Remove(task); 
+            } 
         }
-    }
+    } 
 }
